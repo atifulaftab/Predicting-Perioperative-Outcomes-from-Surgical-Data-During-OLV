@@ -388,7 +388,7 @@ def result_lr( X_train, y_train ,X_test, y_test) :
  plt.show()
  return [acc_score,f1_avg,std_avg, C,penalty]
 
-rawdata = readFile('datadata.csv')
+rawdata = readFile('dataNew.csv')
 data=rawdata
 dataWithLabel=data
 labels = data[1:,[22]] # For oxxygenation data[0:,[23]]  & for complication data[0:,[22]] 
@@ -408,9 +408,9 @@ imp_mean2 = SimpleImputer(missing_values=-1, strategy='mean')
 imp_mean2=imp_mean2.fit(X_test)
 X_test = imp_mean2.transform(X_test)
 
-# sc = StandardScaler()
-# X_train = sc.fit_transform(X_train)
-# X_test = sc.transform(X_test)
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
 print("Number transactions X_train dataset: ", X_train.shape)
 print("Number transactions y_train dataset: ", y_train.shape)
 print("Number transactions X_test dataset: ", X_test.shape)
@@ -470,16 +470,16 @@ print('After OverSampling, the shape of train_y: {} \n'.format(y_train_res.shape
 # plot_rf_tree(estimator)
 # print('\n')
 
-# X_train_pre = X_train_res[:,[0,1,2,3,4,5,6,7,8,9,10,11]]
-# X_test_pre = X_test[:,[0,1,2,3,4,5,6,7,8,9,10,11]]
-# print('==========Intraoperative Data SVM=======\n')
-# [acc_score, f1_avg,std_avg, C,kernel,gamma] = result_svm(X_train_pre,y_train_res, X_test_pre,y_test)
-# print("Accuracy Score:",acc_score.mean())
-# print("F1 Score:",f1_avg.mean())
-# print("Standard Deviation for F1 Score:",std_avg.mean())
-# print('C:',C.mean())
-# print('Kernel:',kernel)
-# print('gamma:',gamma.mean())
+X_train_pre = X_train_res[:,[0,1,2,3,4,5,6,7,8,9,10,11]]
+X_test_pre = X_test[:,[0,1,2,3,4,5,6,7,8,9,10,11]]
+print('==========Intraoperative Data SVM=======\n')
+[acc_score, f1_avg,std_avg, C,kernel,gamma] = result_svm(X_train_pre,y_train_res, X_test_pre,y_test)
+print("Accuracy Score:",acc_score.mean())
+print("F1 Score:",f1_avg.mean())
+print("Standard Deviation for F1 Score:",std_avg.mean())
+print('C:',C.mean())
+print('Kernel:',kernel)
+print('gamma:',gamma.mean())
 
 # X_train_pre = X_train_res[:,[0,1,2,3,4,5,6,7,8,9,10,11]]
 # X_test_pre = X_test[:,[0,1,2,3,4,5,6,7,8,9,10,11]]
@@ -596,20 +596,20 @@ print('After OverSampling, the shape of train_y: {} \n'.format(y_train_res.shape
 
 
 
-X_train_pre = X_train_res[:,[0,1,2,3,11,12,13,14]]
-X_test_pre = X_test[:,[0,1,2,3,11,12,13,14]]
-# X_train_pre = X_train_res[:,[0,1,2,3,11,12,13,14,15]]
-# X_test_pre = X_test[:,[0,1,2,3,11,12,13,14,15]]
-print('==========Combined without  percentile Data RF=======')
-#[acc_score, f1_avg, std_avg,depth,n_estimator,estimator] = result_rf(X_train_pre,y_train_res, X_test_pre,y_test)
-[acc_score, f1_avg, depth,n_estimator,estimator] = result_rf(X_train_pre,y_train_res, X_test_pre,y_test)
-print("Accuracy Score:",acc_score.mean())
-print("F1 Score:",f1_avg.mean())
-#print("Standard Deviation for F1 Score:",std_avg.mean())
-print('Max_Depth:',depth.mean())
-print('N_estimators:',n_estimator.mean())
-plot_rf_tree(estimator)
-print('\n')
+# X_train_pre = X_train_res[:,[0,1,2,3,11,12,13,14]]
+# X_test_pre = X_test[:,[0,1,2,3,11,12,13,14]]
+# # X_train_pre = X_train_res[:,[0,1,2,3,11,12,13,14,15]]
+# # X_test_pre = X_test[:,[0,1,2,3,11,12,13,14,15]]
+# print('==========Combined without  percentile Data RF=======')
+# #[acc_score, f1_avg, std_avg,depth,n_estimator,estimator] = result_rf(X_train_pre,y_train_res, X_test_pre,y_test)
+# [acc_score, f1_avg, depth,n_estimator,estimator] = result_rf(X_train_pre,y_train_res, X_test_pre,y_test)
+# print("Accuracy Score:",acc_score.mean())
+# print("F1 Score:",f1_avg.mean())
+# #print("Standard Deviation for F1 Score:",std_avg.mean())
+# print('Max_Depth:',depth.mean())
+# print('N_estimators:',n_estimator.mean())
+# plot_rf_tree(estimator)
+# print('\n')
 
 # X_train_pre = X_train_res[:,[0,1,2,3,11,12,13,14,15]]
 # X_test_pre = X_test[:,[0,1,2,3,11,12,13,14,15]]
