@@ -25,8 +25,9 @@ gPercentile = []
 lPercentile = []
 nPercentile = []
 lengthCount = 0
+histVal  =6
 
-directory = os.path.join(".//TS/")
+directory = os.path.join(".//TS2/")
 for root,dirs,files in os.walk(directory):
     for file in files:
        if file.endswith(".csv"):
@@ -68,25 +69,25 @@ for root,dirs,files in os.walk(directory):
                      ncount = 0
 pcount=np.arange(1,84)                   
 f= plt.figure(1)
-plt.hist(gPercentile,5,color='red')
+plt.hist(gPercentile,histVal,color='red')
 plt.xlabel('Percentage of Time for HR > 120 ')
 plt.ylabel('Patients')
 f.show()
 
 g= plt.figure(2)
-plt.hist(lPercentile,5,color='green')
+plt.hist(lPercentile,histVal,color='green')
 plt.xlabel('Percentage of Time for HR < 60')
 plt.ylabel('Patients')
 g.show()
 
 c= plt.figure(3)
-plt.hist(mPercentile,5,color='orange')
+plt.hist(mPercentile,histVal,color='orange')
 plt.xlabel('Percentage of Time for HR > 110')
 plt.ylabel('Patients')
 c.show()
 
 d= plt.figure(4)
-plt.hist(nPercentile,5,color='blue')
+plt.hist(nPercentile,histVal,color='blue')
 plt.xlabel('Percentage of Time for HR > 100')
 plt.ylabel('Patients')
 d.show()
@@ -96,7 +97,7 @@ gcount=0
 lPercentile=[]
 gPercentile=[]
 
-directory = os.path.join(".//TS/")
+directory = os.path.join(".//TS2/")
 for root,dirs,files in os.walk(directory):
     for file in files:
        if file.endswith(".csv"):
@@ -131,14 +132,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,52)
 h= plt.figure(5)
-plt.hist(gPercentile,5,color='brown')
+plt.hist(gPercentile,histVal,color='brown')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for ABP - SYS < 80')
 h.show()
 
 pcount=np.arange(1,67)
 i= plt.figure(6)
-plt.hist(lPercentile,5,color='purple')
+plt.hist(lPercentile,histVal,color='purple')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for ABP - Mean < 60')
 i.show()
@@ -148,7 +149,7 @@ gcount=0
 lPercentile=[]
 gPercentile=[]
 
-directory = os.path.join(".//TS/")
+directory = os.path.join(".//TS2/")
 for root,dirs,files in os.walk(directory):
     for file in files:
        if file.endswith(".csv"):
@@ -183,14 +184,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,39)
 j= plt.figure(7)
-plt.hist(gPercentile,5,color='gold')
+plt.hist(gPercentile,histVal,color='gold')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for PEEP > 10')
 j.show()
 
 pcount=np.arange(1,39)
 k= plt.figure(8)
-plt.bar(lPercentile,5,color='black')
+plt.hist(lPercentile,histVal,color='black')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for PEEP < 5')
 k.show()
@@ -201,7 +202,7 @@ lPercentile=[]
 gPercentile=[]
 
 
-directory = os.path.join(".//TS/")
+directory = os.path.join(".//TS2/")
 for root,dirs,files in os.walk(directory):
     for file in files:
        if file.endswith(".csv"):
@@ -236,14 +237,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,39)
 l= plt.figure(9)
-plt.hist(lPercentile,5,color='lime')
+plt.hist(lPercentile,histVal,color='lime')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for Ppeak > 30')
 l.show()
 
 pcount=np.arange(1,84)
 m= plt.figure(10)
-plt.hist(gPercentile,5,color='pink')
+plt.hist(gPercentile,histVal,color='pink')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for FiO2 > 70')
 m.show()
@@ -253,7 +254,7 @@ gcount=0
 lPercentile=[]
 gPercentile=[]
 
-directory = os.path.join(".//TS/")
+directory = os.path.join(".//TS2/")
 for root,dirs,files in os.walk(directory):
     for file in files:
        if file.endswith(".csv"):
@@ -288,14 +289,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,84)
 m= plt.figure(11)
-plt.hist(lPercentile,5,color='coral')
+plt.hist(lPercentile,histVal,color='coral')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for CO? - ET < 25')
 m.show()
 
 pcount=np.arange(1,84)
 n= plt.figure(12)
-plt.bar(gPercentile,5,color='teal')
+plt.hist(gPercentile,histVal,color='teal')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for CO? - ET > 45')
 n.show()
