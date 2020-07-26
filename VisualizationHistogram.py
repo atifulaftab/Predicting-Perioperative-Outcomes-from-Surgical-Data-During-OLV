@@ -25,7 +25,7 @@ gPercentile = []
 lPercentile = []
 nPercentile = []
 lengthCount = 0
-histVal  =6
+histVal  =5
 
 directory = os.path.join(".//TS2/")
 for root,dirs,files in os.walk(directory):
@@ -69,25 +69,25 @@ for root,dirs,files in os.walk(directory):
                      ncount = 0
 pcount=np.arange(1,84)                   
 f= plt.figure(1)
-plt.hist(gPercentile,histVal,color='red')
+plt.hist(gPercentile,6,range=[0,6],color='red')
 plt.xlabel('Percentage of Time for HR > 120 ')
 plt.ylabel('Patients')
 f.show()
 
 g= plt.figure(2)
-plt.hist(lPercentile,histVal,color='green')
+plt.hist(lPercentile,8,range=[0,80],color='green')
 plt.xlabel('Percentage of Time for HR < 60')
 plt.ylabel('Patients')
 g.show()
 
 c= plt.figure(3)
-plt.hist(mPercentile,histVal,color='orange')
+plt.hist(mPercentile,8,range=[0,8],color='orange')
 plt.xlabel('Percentage of Time for HR > 110')
 plt.ylabel('Patients')
 c.show()
 
 d= plt.figure(4)
-plt.hist(nPercentile,histVal,color='blue')
+plt.hist(nPercentile,6,range=[0,60],color='blue')
 plt.xlabel('Percentage of Time for HR > 100')
 plt.ylabel('Patients')
 d.show()
@@ -132,14 +132,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,52)
 h= plt.figure(5)
-plt.hist(gPercentile,histVal,color='brown')
+plt.hist(gPercentile,7,range=[0,7],color='brown')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for ABP - SYS < 80')
 h.show()
 
 pcount=np.arange(1,67)
 i= plt.figure(6)
-plt.hist(lPercentile,histVal,color='purple')
+plt.hist(lPercentile,7,range=[0,35],color='purple')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for ABP - Mean < 60')
 i.show()
@@ -184,14 +184,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,39)
 j= plt.figure(7)
-plt.hist(gPercentile,histVal,color='gold')
+plt.hist(gPercentile,8,range=[0,1.6],color='gold')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for PEEP > 10')
 j.show()
 
 pcount=np.arange(1,39)
 k= plt.figure(8)
-plt.hist(lPercentile,histVal,color='black')
+plt.hist(lPercentile,5,range=[0,100],color='black')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for PEEP < 5')
 k.show()
@@ -237,14 +237,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,39)
 l= plt.figure(9)
-plt.hist(lPercentile,histVal,color='lime')
+plt.hist(lPercentile,7,range=[0,70],color='lime')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for Ppeak > 30')
 l.show()
 
 pcount=np.arange(1,84)
 m= plt.figure(10)
-plt.hist(gPercentile,histVal,color='pink')
+plt.hist(gPercentile,5,range=[0,100],color='pink')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for FiO2 > 70')
 m.show()
@@ -289,14 +289,14 @@ for root,dirs,files in os.walk(directory):
                      gcount = 0
 pcount=np.arange(1,84)
 m= plt.figure(11)
-plt.hist(lPercentile,histVal,color='coral')
+plt.hist(lPercentile,8,range=[0,40],color='coral')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for CO? - ET < 25')
 m.show()
 
 pcount=np.arange(1,84)
 n= plt.figure(12)
-plt.hist(gPercentile,histVal,color='teal')
+plt.hist(gPercentile,7,range=[0,70],color='teal')
 plt.ylabel('Patients')
 plt.xlabel('Percentage of Time for CO? - ET > 45')
 n.show()
